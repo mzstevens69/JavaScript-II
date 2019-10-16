@@ -87,8 +87,17 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
-// Problem 1
-
-// Problem 2
-
-// Problem 3
+// Problem 1--runner In the same company
+let companyNameIs = [];
+const nameIs = runners.filter(theName => theName.company_name == 'Skinte');
+console.log(nameIs);
+// Problem 2----get all emails for an email campaign
+let personEmail = [];
+runners.forEach((runner) => {
+  personEmail.push(`${runner.email}`);
+} );
+console.log(personEmail);
+// Problem 3---need all first names lower case as the drunkness has worn off
+let firstNamesLowercase = [];
+const noCaps = runners.map(person => person.first_name.toLowerCase());
+console.log(noCaps);

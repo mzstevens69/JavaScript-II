@@ -38,7 +38,7 @@
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 let  getLength = (array, cb) => {
   cb(array.length);
@@ -46,45 +46,50 @@ let  getLength = (array, cb) => {
 
  getLength(items, function(length) {
   // getLength passes the length of the array into the callback.
-  console.log('The length of the array is ' + length);
+  console.log('The length of the array is ' `${length}`);
  });
  let last = (array, cb) => {
   cb(array[array.length - 1]);
 };
  last(items, function(lastItem) {
   // last passes the last item of the array into the callback.
-  console.log('The last one is' + lastItem);
+  console.log('The last one is'`${lastItem}`);
 });
-function sumNums(x, y, cb) {
+function sumNums(num1, num2, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  
-  const add = cb(num1, num2) {
-  return
-  }
-}  
-console.log(sumNums(2, 3,add))
-function multiplyNums(x, y, cb) {
+  return cb(num1, num2);
+   
+  const add = cb(num1, num2 => num1 + num2);
+   };
+
+console.log(sumNums(2, 3,add));
+
+function multiplyNums(num1, num2, multiply) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-  return cb(x * y);
+  return multiply(num1, num2);
+  multiply = (num1, num2 => num1 * num2);
 
-}
-
-function contains(item, list, cb) {
+};
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+function contains(items, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
- if(list.includes(item)) {
+ if(list.includes(items)) {
   return cb(true) 
  }
  else { 
    return cb(false)
- }
+ };
+}
 
-
-/* STRETCH PROBLEM */
-
-function removeDuplicates(array, cb) {
+/* STRETCH PROBLEM -- Array.from() method*/
+let removeDuplicates = (array, cb) => {
+  return cb(Array.from(new Set(array)));
+};
+function removeDuplicates(items, (function(items, schoolItems) {
+  console.log('removed your duplicates'`${schoolItems}`)});
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 
-}
+

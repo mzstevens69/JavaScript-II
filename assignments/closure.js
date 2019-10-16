@@ -6,26 +6,32 @@
 function theFunction() {
   let u = 1;
   return u + 1;
-  console.log(theFunction());
+  
 };
+console.log(theFunction());
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
 // ==== Challenge 2: Implement a "counter maker" function ====
-const counterMaker = () => { 
-  let count = 0;
+const counter = (count = 0) => { 
+  let plusOne = count;
   let limit = 10;
-    function counter() {
-      if( count == limit) {
+    return function counter() {
+      plusOne += 1;
+      console.log(plusOne);
+      if( count === limit) {
+       
         return count = 1;
       }
-       count += count;
-      return count;
+       
+      return plusOne;
     }
-   //
-  return counter();
-  
+   
 }; 
+const newCounter = counter();
+newCounter();
+newCounter();
+
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
   // 2- Declare a function `counter`. It should increment and return `count`.
@@ -42,8 +48,18 @@ const counterMaker = () => {
 // will refuse to go over the limit, and start back at 1.
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
-const counterFactory = () => {
+const counterFactory = ((goUp = 0) =>  {
+  goUp++;
+  let goDown = 5;
+  goDown-- ; 
+  if (goDown == 0) {
+    return goDown = 5;
+  }
+  return counter();
+
+});
+console.log(counterFactory);
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+

@@ -3,12 +3,22 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
-function theFunction() {
-  let u = 1;
-  return u + 1;
-  
-};
-console.log(theFunction());
+// function country(countryName){
+//   const lang1 = 'French';
+//   const lang2 ='English';
+//  console.log(`${countryName} is the second biggest country in the world`);
+//   debugger;
+//   function province(provName){
+//     const sport = 'hockey'
+//     console.log(`the most popular sport in ${provName} is ${sport}`);
+function theClosure(closeIt) {
+  console.log(`${closeIt} it just works`);
+  function insideCloseIt(itIsClosed) {
+    console.log(`I am inside the functioon ${closeIt} using ${itIsClosed}`);
+  }//closes insideCloseIt
+  insideCloseIt('the first function');
+};//closes theClosure
+theClosure('when it works')
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 

@@ -55,36 +55,45 @@ let  getLength = (array, cb) => {
   // last passes the last item of the array into the callback.
   console.log('The last one is:' + lastItem );
 });
-let sumNums(9,9, cb) => {
+
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   // return cb(num1, num2);
-
+  var sumNums = (x, y, cb) => {
+    cb(x + y);
+  };
   
-   
+  sumNums(9, 9, function(add) {
+    console.log('The sum is ' + add);
+  });
 
-console.log(sumNums(2, 3, add));
 
- multiplyNums(9, 9, function(multiply) {
-  console.log('It is' + multiply);
- });
-  // multiplyNums multiplies two numbers and passes the result to the callback.
- 
+  // multiplyNums multiplies two numbers and passes the result to the callback. 
   // return multiply(num1, num2);
+  let multiplyNums = (x, y, cb) => {
+    cb(x*y);
+  }
+  multiplyNums(9, 9, function(multiply) {
+    console.log('It is' + multiply);
+   });
   
 
 
 //const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
-function contains(items, list, cb) {
+let contains = (array, item, cb) => {
   // contains checks if an item is present inside of the given array/list.
+  // let array = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === item) {
+      return cb(true);
   // Pass true to the callback if it is, otherwise pass false.
- if(list.includes(items)) {
-  return cb(true) 
  }
- else { 
+} 
    return cb(false)
  };
-}
-/*
+ contains(items, 'Pencil', function(testIt) {
+ console.log(testIt ? 'It is in array' : 'it is not in array');
+ });
+/*  str.includes(searchString[, position])
 /* STRETCH PROBLEM -- Array.from() method*/
 //let removeDuplicates = (array, cb) => {
 //  return cb(Array.from(new Set(array)));
